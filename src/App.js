@@ -23,7 +23,9 @@ function App() {
   return (
     <div data-test="component-app">
       <p data-test="counter-display">The count is <span data-test='display-number'>{count}</span></p>
-      {error ? <p>Counter can't go below 0</p> : null}
+      <div data-test="error-message" className={`error ${error ? '' : 'hidden'}`}>
+        The counter cannot go below 0
+      </div>
       <button data-test="plus-one-button" onClick={addCount}>Plus One</button>
       <button data-test="minus-one-button" onClick={minusCount}>Minus One</button>
     </div>
